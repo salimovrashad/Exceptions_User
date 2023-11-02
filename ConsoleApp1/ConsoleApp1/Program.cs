@@ -9,23 +9,59 @@ namespace ConsoleApp1
 			{
 				do
 				{
+					User user = new User();
+					a:
 					try
 					{
-						User user = new User();
 						Console.WriteLine("Enter Name");
 						user.Name = Console.ReadLine();
-						Console.WriteLine("Enter Surname");
-						user.Age = Convert.ToInt32(Console.ReadLine());
-						Console.WriteLine("Enter Username");
-						user.PhoneNumber = Console.ReadLine();
-						Console.WriteLine("Enter Password");
-						user.Password = Console.ReadLine();
-				}
+						
+					}
 					catch (Exception ex)
 					{
 						Console.WriteLine(ex.Message);
+					goto a;
 					}
-				} while (true);
+					
+					b:
+					try
+					{
+						Console.WriteLine("Enter Age");
+						user.Age = Convert.ToInt32(Console.ReadLine());
+
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
+					goto b;
+					}
+
+					c:
+					try
+					{
+						Console.WriteLine("Enter PhoneNumber");
+						user.PhoneNumber = Console.ReadLine();
+
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
+					goto c;
+					}
+					
+					d:
+					try
+					{
+						Console.WriteLine("Enter Password");
+						user.Password = Console.ReadLine();
+
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.Message);
+					goto d;
+					}
+			} while (true);
 			}
 
 		}
